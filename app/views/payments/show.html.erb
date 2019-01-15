@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @payment.status %>
+</p>
+
+<p>
+  <strong>Hotel name:</strong>
+  <%= @hotel.name %>
+</p>
+
+<p>
+  <strong>Hotel price:</strong>
+  <%= @hotel.price %>
+</p>
+
+<%= link_to 'Edit', edit_hotel_payment_path(@hotel, @payment) %> |
+<%= link_to 'Back', hotel_payments_path %>
