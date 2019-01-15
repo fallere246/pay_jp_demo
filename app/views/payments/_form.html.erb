@@ -11,12 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.select :status, Payment.statuses.keys.to_a, {} %>
-  </div>
+  <p>
+    <strong>Hotel name:</strong>
+    <%= @hotel.name %>
+  </p>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <p>
+    <strong>Hotel price:</strong>
+    <%= @hotel.price %>
+  </p>
+
+  <script src="https://checkout.pay.jp/" class="payjp-button" data-key=<%= ENV["PAYJP_PUBLIC_KEY"] %> data-lang="en"></script>
 <% end %>
