@@ -16,9 +16,7 @@
       <tr>
         <td><%= hotel.name %></td>
         <td><%= hotel.price %></td>
-        <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show this hotel', hotel %></td>
       </tr>
     <% end %>
   </tbody>
