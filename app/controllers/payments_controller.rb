@@ -25,10 +25,13 @@ class PaymentsController < ApplicationController
   # POST /payments
   # POST /payments.json
   def create
-    @payment = @hotel.payments.new(payment_params)
+    @payment = @hotel.payments.new
+    @payment.token = params['payjp-token']
+    @payment.price = @hotel.price
 
     respond_to do |format|
       if @payment.save
+        @payment.success!
         format.html { redirect_to hotel_payment_path(@hotel, @payment), notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
@@ -75,6 +78,6 @@ class PaymentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
-      params.require(:payment).permit(:hotel_id, :status)
+      params.require(:payment).permit(:hotel_id, :status, :price, :token)
     end
 end
