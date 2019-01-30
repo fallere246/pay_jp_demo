@@ -47,6 +47,7 @@ gem 'enum_help'
 
 group :development, :test do
   # Debugger
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'byebug'
   gem 'pry'
@@ -54,6 +55,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+  gem 'rails-flog'
 end
 
 group :development do
