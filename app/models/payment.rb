@@ -11,10 +11,14 @@ class Payment < ApplicationRecord
   private
     def pay
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+
+      c = Payjp::Customer.create(card: self.token)
+      logger.debug c
+
       p = Payjp::Charge.create(
         amount: self.price,
-        card: self.token,
-        currency: 'jpy',
+        customer: c,
+        currency: 'jpy'
       )
       logger.debug p
     rescue

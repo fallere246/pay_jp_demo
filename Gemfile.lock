@@ -42,7 +42,9 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    anbt-sql-formatter (0.0.7)
     arel (9.0.0)
+    awesome_print (1.8.0)
     better_errors (2.5.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -147,6 +149,10 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-flog (1.5.0)
+      anbt-sql-formatter (>= 0.0.7)
+      awesome_print
+      rails (>= 4.2.0)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
     railties (5.2.2)
@@ -214,6 +220,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   better_errors
   bootsnap (>= 1.1.0)
   byebug
@@ -231,6 +238,7 @@ DEPENDENCIES
   pry-stack_explorer
   puma (~> 3.11)
   rails (~> 5.2.2)
+  rails-flog
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
